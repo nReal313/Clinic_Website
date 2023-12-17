@@ -9,24 +9,39 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { appContext } from './appContext';
 import { useState } from 'react'
 import Refills from './components/Refills';
+import About from './components/About';
+import FindUs from './components/FindUs';
 
 function App() {
+
   let [form, setForm] = useState({
     isExisting: false,
     firstName: "",
     lastName: "",
     city: "",
     state: "",
-    patientID: null,
-    appointmentDate: ""
+    patientID: "",
+    appointmentDate: "",
+    address: ""
   })
+
+  let [current, setCurrent] = useState("");
+
+  let [filled, setFilled] = useState(false);
+
+  const [click, setClick] = useState(false);
+
+
+
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar number="94160-48323" />
-        <appContext.Provider value={{ form, setForm }}>
+        <appContext.Provider value={{ form, setForm, filled, setFilled, click, setClick }}>
+          <Navbar number="94160-48323" current={current} setCurrent={setCurrent} />
           <Routes>
             <Route path="/" element={<Info />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/FindUs" element={<FindUs />} />
             <Route path="/Home" element={<Info />} />
             <Route path="/Appointment" element={<Appointment />} />
             <Route path="/Refills" element={<Refills />} />

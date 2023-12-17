@@ -16,7 +16,7 @@ export default function Footer() {
                 </div>
                 <div className="col-8 col-lg-5 text-center">
                     <div className="text-light p-1 m-2 text-center">
-                        <h3 className="lead m-2">© 1991-2023 <br /> Guleria Nursing Home<br /> Hisar Road, Sirsa, Haryana <br />All Rights Reserved.</h3>
+                        <h3 className="lead m-2">© 1991-2023 <br /> Guleria Nursing Home<br /> Sirsa, Haryana <br />All Rights Reserved.</h3>
                     </div>
 
                 </div>
