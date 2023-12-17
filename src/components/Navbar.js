@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import gnh from "../GNH Logo(black).png"
 import telephone from "../telephone.png"
 import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
 
-    const [current, setCurrent] = useState("Home");
-
     const activeChanger = (event) => {
-        setCurrent(event.target.id);
+        props.setCurrent(event.target.id);
     }
 
     return (
@@ -21,30 +19,30 @@ export default function Navbar(props) {
                     </button>
                     <div className="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0 ">
-                            <li className="nav-item">
-                                <Link className={`nav-link ${current === "Home" ? "active" : ""}`} id="Home" onClick={activeChanger} aria-current="page" to="Home">Home</Link>
+                            <li className="nav-item m-2" key="1">
+                                <Link className={`nav-link ${props.current === "Home" ? "active" : ""}`} id="Home" onClick={activeChanger} aria-current="page" to="Home">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className={`nav-link ${current === "About" ? "active" : ""}`} id="About" onClick={activeChanger} to="About">About</Link>
+                            <li className="nav-item m-2" key="2">
+                                <Link className={`nav-link ${props.current === "About" ? "active" : ""}`} id="About" onClick={activeChanger} to="About">About</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className={`nav-link ${current === "Appointment" ? "active" : ""}`} id="Appointment" onClick={activeChanger} to="Appointment">Appointment</Link>
+                            <li className="nav-item m-2" key="3">
+                                <Link className={`nav-link ${props.current === "Appointment" ? "active" : ""}`} id="Appointment" onClick={activeChanger} to="Appointment">Appointment</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className={`nav-link ${current === "Refills" ? "active" : ""}`} id="Refills" onClick={activeChanger} to="Refills">Refills</Link>
+                            <li className="nav-item m-2" key="4">
+                                <Link className={`nav-link ${props.current === "Refills" ? "active" : ""} disabled`} id="Refills" onClick={activeChanger} to="Refills">Refills</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className={`nav-link ${current === "Admission" ? "active" : ""} disabled`} id="Admission" onClick={activeChanger} to="Admission">Admissions</Link>
+                            <li className="nav-item m-2" key="5">
+                                <Link className={`nav-link ${props.current === "Admission" ? "active" : ""} disabled`} id="Admission" onClick={activeChanger} to="Admission">Admissions</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className={`nav-link ${current === "FindUs" ? "active" : ""}`} id="FindUs" onClick={activeChanger} to="FindUs">Find Us</Link>
+                            <li className="nav-item m-2" key="6">
+                                <Link className={`nav-link ${props.current === "FindUs" ? "active" : ""}`} id="FindUs" onClick={activeChanger} to="FindUs">Find Us</Link>
                             </li>
                         </ul>
                         <div className="d-flex justify-content-center align-items-center" role="search">
                             <img src={telephone} alt="" className="m-3" style={{ height: "25px" }} />
                             <ul className="navbar-nav d-block m-1">
-                                <li className="nav-item">Ph : {props.number}</li>
-                                <li className="nav-item">Ph : 1666-231323</li>
+                                <li className="nav-item" key="7">Ph : {props.number}</li>
+                                <li className="nav-item" key="8">Ph : 1666-231323</li>
                             </ul>
                         </div>
                     </div>
