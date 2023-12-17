@@ -22,7 +22,7 @@ export default function Navbar(props) {
                             <li className="nav-item m-2" key="1">
                                 <Link className={`nav-link ${props.current === "Home" ? "active" : ""}`} id="Home" onClick={activeChanger} aria-current="page" to="Home">Home</Link>
                             </li>
-                            <li className="nav-item m-2" key="2">
+                            <li className="nav-item m-2 d-lg-block d-sm-none" key="2">
                                 <Link className={`nav-link ${props.current === "About" ? "active" : ""}`} id="About" onClick={activeChanger} to="About">About</Link>
                             </li>
                             <li className="nav-item m-2" key="3">

@@ -143,15 +143,15 @@ export default function Form(props) {
                 </div>
                 <div className="mb-2">
                     <label htmlFor="patientID" className="form-label m-2">Patient ID</label>
-                    <input type="text" className="form-control m-2" id="patientID" name="patientID" value={form.patientID} onChange={handleChange} placeholder='' disabled={true} />
+                    <input type="text" className="form-control" id="patientID" name="patientID" value={form.patientID} onChange={handleChange} placeholder='' disabled={true} />
                 </div>
                 <div className="mb-2" style={{ display: props.parent === "refill" ? "block" : "none" }}>
                     <label htmlFor="address" className="form-label m-2">Address</label>
-                    <input type="text" className="form-control m-2" id="address" name="address" value={form.address} onChange={handleChange} placeholder='' />
+                    <input type="text" className="form-control" id="address" name="address" value={form.address} onChange={handleChange} placeholder='' />
                 </div>
                 <div className="mb-2" style={{ display: props.parent === "refill" ? "none" : "block" }}>
                     <label htmlFor="date" className="form-label m-2">Preferred Appointment Date</label>
-                    <input type="date" className="form-control m-2" id="date" name="appointmentDate" value={form.appointmentDate} onChange={handleChange} placeholder={today} min={today} required />
+                    <input type="date" className="form-control" id="date" name="appointmentDate" value={form.appointmentDate} onChange={handleChange} placeholder={today} min={today} required />
                 </div>
                 <div className="container d-flex p-2 justify-content-center">
                     <Link to="/Appointment" style={{ textDecoration: "none", pointerEvents: valid === false ? "none" : "" }} ><button className="btn btn-success btn-md m-1" style={{ display: (props.parent === "refill") ? "none" : "block" }} disabled={!valid} onClick={() => { setClick(true) }}>Find an Appointment</button></Link>

@@ -3,14 +3,14 @@ import React from 'react'
 export default function About() {
     return (
         <div className='mb-5'>
-            <div className="row m-3 p-2 justify-content-center text-start">
+            <div className="row my-3 justify-content-center text-sm-center">
                 <div className="col-lg-10">
-                    <h2>Know your Doctor</h2>
+                    <h2 className='mb-3'>Know your Doctor</h2>
                     <h2><strong>Dr. BS Guleria (MBBS MD)</strong></h2>
                 </div>
 
             </div>
-            <div className="row lead p-2 m-2 justify-content-center">
+            <div className="row lead p-2 m-2 my-1 justify-content-center">
                 <div className="col-8 col-lg-10 text-break text-start">
                     Dr. BS Guleria is a distinguished psychiatrist based in Sirsa, Haryana, with a wealth of experience and a stellar reputation for providing compassionate care. Graduating from Sardar Patel Medical College, Bikaner, in the class of 1970, Dr. Guleria began his medical career as a government employee in Punjab. He further honed his expertise by completing an MD in psychiatry at Punjab Medical College, Patiala.
                     <br />
